@@ -66,7 +66,7 @@ self.addEventListener('fetch', function(e) {
     }
 
     e.respondWith(
-        fetch(e.requset).catch(function() {
+        fetch(e.request).catch(function() {
             return caches.match(e.request).then(function(response) {
                 if(response) {
                     return response;
